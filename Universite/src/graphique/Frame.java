@@ -10,7 +10,7 @@ public class Frame extends JFrame{
 	public Frame(String titre){
 		
 		super(titre);
-		this.pan=new Panel();
+		this.pan=new Panel("Universite");
 		
 		this.pack();
 	}
