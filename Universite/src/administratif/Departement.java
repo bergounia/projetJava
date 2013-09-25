@@ -2,7 +2,12 @@ package administratif;
 
 public class Departement {
 
-private String nom;
+	private String nom;
+
+	public Departement()
+	{
+		this.nom="";
+	}
 
 
 
