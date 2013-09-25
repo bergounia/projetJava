@@ -15,5 +15,21 @@ public class UFR {
 	public UFR() {
 		this.nom = "noname";
 	}
+	
+	public Object clone() throws CloneNotSupportedException
+	{
+			return super.clone();
+	}
+	
+	@Override
+	public String toString()
+	{
+		String res= new String();
+		
+		res+="UFR de nom: "+ this.nom;
+				
+		return res;
+		
+	}
 
 }
