@@ -1,19 +1,27 @@
 package administratif;
 
+import java.util.ArrayList;
+
+import universite.batiments.Batiment;
+
 public class UFR {
 	
 	private String nom;
+	private ArrayList<Batiment> b;
 
-	public UFR(String nom) {
+	public UFR(String nom, ArrayList<Batiment> bat) {
 		this.nom = nom;
+		this.b= bat;
 	}
 	
 	public UFR(UFR u) {
 		this.nom = u.nom;
+		this.b= u.b;
 	}
 	
 	public UFR() {
 		this.nom = "noname";
+		this.b= new ArrayList<Batiment>();
 	}
 	
 	public Object clone() throws CloneNotSupportedException
