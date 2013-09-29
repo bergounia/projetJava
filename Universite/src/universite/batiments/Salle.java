@@ -1,9 +1,12 @@
 package universite.batiments;
 
-public abstract class Salle {
+import org.jdom2.Element;
+
+public class Salle {
 
 	private String num;
 	private int nbplace;
+	public Element sa= new Element("salle");
 	
 	public Salle()
 	{
@@ -52,5 +55,18 @@ public abstract class Salle {
 				
 		return res;
 		
+	}
+	
+	public void toXML(Element s)
+	{
+		s.addContent(this.sa);
+		
+		Element num= new Element("num");
+		num.setText(this.getNum());
+		this.sa.addContent(num);
+	      
+		Element nbplaces= new Element("nbplaces");
+		nbplaces.setText(String.valueOf(this.getNbplace()));
+		this.sa.addContent(nbplaces);		
 	}
 }

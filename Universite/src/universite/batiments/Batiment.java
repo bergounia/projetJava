@@ -1,13 +1,14 @@
 package universite.batiments;
 
 import java.util.ArrayList;
+import org.jdom2.Element;
 
 public class Batiment {
 	
 	private int id;
 	private String nom;
 	private ArrayList<Salle> salle;
-	private static int incr=0;
+	private static int incr=1;
 	
 	public Batiment()
 	{
@@ -16,7 +17,7 @@ public class Batiment {
 		this.salle= null;
 	}
 	
-	public Batiment(int id, String nom, ArrayList<Salle> s)
+	public Batiment(String nom, ArrayList<Salle> s)
 	{
 		this.id= incr++;
 		this.nom= nom;
@@ -35,7 +36,7 @@ public class Batiment {
 	{
 		String res= new String();
 		
-		res+="batiment: "+ this.nom + "d'identifiant "+ this.id;
+		res+="batiment: "+ this.nom + " d'identifiant "+ this.id;
 				
 		return res;
 		
@@ -54,6 +55,11 @@ public class Batiment {
 		this.nom = nom;
 	}
 
+	public int getId()
+	{
+		return this.id;
+	}
+	
 	public ArrayList<Salle> getSalle() {
 		return salle;
 	}
@@ -62,4 +68,25 @@ public class Batiment {
 		this.salle = salle;
 	}
 	
+	public void toXML(Element bat)
+	{
+		Element batiment = new Element("batiment");
+		bat.addContent(batiment);
+		
+		Element id= new Element("id");
+		id.setText(String.valueOf(this.getId()));
+		batiment.addContent(id);
+	      
+		Element nom= new Element("nom");
+		nom.setText(this.getNom());
+		batiment.addContent(nom);		
+		
+		Element salles= new Element("salles");
+		batiment.addContent(salles);
+		
+		for(Salle sal : this.salle)
+		{
+			sal.toXML(salles);
+		}
+	}
 }

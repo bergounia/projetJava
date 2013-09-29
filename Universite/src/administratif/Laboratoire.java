@@ -1,6 +1,9 @@
 package administratif;
 
 import java.util.ArrayList;
+
+import org.jdom2.Element;
+
 import personnel.Chercheur;
 
 public class Laboratoire implements Chercheur {
@@ -25,6 +28,11 @@ public class Laboratoire implements Chercheur {
 		this.nom= d.nom;
 		this.p= d.p;
 	}
+	
+	public String getNom()
+	{
+		return this.nom;
+	}
 
 	public Object clone() throws CloneNotSupportedException
 	{
@@ -40,5 +48,15 @@ public class Laboratoire implements Chercheur {
 				
 		return res;
 		
+	}
+	
+	public void toXML(Element d)
+	{
+		Element laboratoire= new Element("Laboratoire");
+		d.addContent(laboratoire);
+		
+		Element nom= new Element("nom");
+		nom.setText(this.getNom());
+		laboratoire.addContent(nom);
 	}
 }

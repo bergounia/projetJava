@@ -2,6 +2,8 @@ package administratif;
 
 import java.util.ArrayList;
 
+import org.jdom2.Element;
+
 import universite.batiments.Batiment;
 
 public class UFR {
@@ -28,6 +30,16 @@ public class UFR {
 		this.d= new ArrayList<Departement>();
 	}
 	
+	public String getNom()
+	{
+		return this.nom;
+	}
+	
+	public ArrayList<Batiment> getListeBatiments()
+	{
+		return this.b;
+	}
+	
 	public Object clone() throws CloneNotSupportedException
 	{
 			return super.clone();
@@ -44,4 +56,29 @@ public class UFR {
 		
 	}
 
+	public void toXML(Element u)
+	{
+		Element ufr= new Element("ufr");
+		u.addContent(ufr);
+		
+		Element nom= new Element("nom");
+		nom.setText(this.getNom());
+		ufr.addContent(nom);
+		
+		Element batiments= new Element("batiments");
+		ufr.addContent(batiments);
+		
+		for(Batiment bat : this.b)
+		{
+			bat.toXML(batiments);
+		}
+		
+		Element departements= new Element("departementsUFR");
+		ufr.addContent(departements);
+		
+		for(Departement depart : this.d)
+		{
+			depart.toXML(departements);
+		}
+	}
 }

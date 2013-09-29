@@ -1,6 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Universite>
-  <batiment>
-    <id>001</id>
-  </batiment>
+  <universite>
+    <nom>URCA</nom>
+    <ufrsUniversite>
+      <ufr>
+        <nom>FacDesSciences</nom>
+        <batiments>
+          <batiment>
+            <id>1</id>
+            <nom>Informatique</nom>
+            <salles />
+          </batiment>
+          <batiment>
+            <id>2</id>
+            <nom>Amphi</nom>
+            <salles />
+          </batiment>
+        </batiments>
+        <departementsUFR>
+          <departement>
+            <nom>DepartementInformatique</nom>
+          </departement>
+          <departement>
+            <nom>DepartementPhysique</nom>
+          </departement>
+        </departementsUFR>
+      </ufr>
+      <ufr>
+        <nom>FacDeChalon</nom>
+        <batiments>
+          <batiment>
+            <id>1</id>
+            <nom>Informatique</nom>
+            <salles />
+          </batiment>
+          <batiment>
+            <id>2</id>
+            <nom>Amphi</nom>
+            <salles />
+          </batiment>
+        </batiments>
+        <departementsUFR>
+          <departement>
+            <nom>DepartementTC</nom>
+          </departement>
+          <departement>
+            <nom>DepartementGC</nom>
+          </departement>
+        </departementsUFR>
+      </ufr>
+    </ufrsUniversite>
+    <laboratoiresUniversite>
+      <Laboratoire>
+        <nom>Labo1</nom>
+      </Laboratoire>
+      <Laboratoire>
+        <nom>Labo2</nom>
+      </Laboratoire>
+    </laboratoiresUniversite>
+    <departementsUniversite>
+      <departement>
+        <nom>DepartementMathematiques</nom>
+      </departement>
+      <departement>
+        <nom>DepartementEconomie</nom>
+      </departement>
+    </departementsUniversite>
+  </universite>
 </Universite>

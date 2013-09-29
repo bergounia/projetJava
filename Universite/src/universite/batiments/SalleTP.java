@@ -1,5 +1,8 @@
 package universite.batiments;
 
+import org.jdom2.Attribute;
+import org.jdom2.Element;
+
 public class SalleTP extends Salle{
 	
 	private int posteInfo = 0;
@@ -36,7 +39,13 @@ public class SalleTP extends Salle{
 				" contient "+ this.posteInfo + " postes informatique";
 			
 		return res;
-		
 	}
 
+	@Override
+	public void toXML(Element salleXML)
+	{
+		//Ajout de l'attribut type 
+		Attribute type = new Attribute("type","SalleTP");
+		this.sa.setAttribute(type);
+	}
 }

@@ -1,6 +1,7 @@
 package administratif;
 
 import java.util.ArrayList;
+import org.jdom2.Element;
 
 import personnel.Enseignant;
 
@@ -32,6 +33,11 @@ public class Departement implements Enseignant{
 			return super.clone();
 	}
 	
+	public String getNom()
+	{
+		return this.nom;
+	}
+	
 	@Override
 	public String toString()
 	{
@@ -41,5 +47,19 @@ public class Departement implements Enseignant{
 				
 		return res;
 		
+	}
+	
+	public void toXML(Element e)
+	{
+		Element departement= new Element("departement");
+		e.addContent(departement);
+		
+		Element nom= new Element("nom");
+		nom.setText(this.getNom());
+		departement.addContent(nom);
+		
+		//Element listeDesEnseignants= new Element("Enseignant");
+		//departement.addContent(listeDesEnseignants);
+
 	}
 }

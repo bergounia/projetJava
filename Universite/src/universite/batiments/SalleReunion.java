@@ -1,5 +1,8 @@
 package universite.batiments;
 
+import org.jdom2.Attribute;
+import org.jdom2.Element;
+
 public class SalleReunion extends Salle{
 	
 	private boolean paperBoard=false;
@@ -40,6 +43,13 @@ public class SalleReunion extends Salle{
 			res+="  ne contient pas de paperboard";	
 			
 		return res;
-		
+	}
+	
+	@Override
+	public void toXML(Element salleXML)
+	{
+		//Ajout de l'attribut type 
+		Attribute type = new Attribute("type","SalleReunion");
+		this.sa.setAttribute(type);
 	}
 }

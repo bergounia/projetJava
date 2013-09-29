@@ -2,6 +2,10 @@ package administratif;
 
 import java.util.ArrayList;
 
+import org.jdom2.Element;
+
+import universite.batiments.Batiment;
+
 public class Universite {
 	
 	private String nom;
@@ -21,7 +25,21 @@ public class Universite {
 	{
 		this.nom= nom;
 		this.ufr= u;
+		this.labo= l;
 		this.depart= d;
+	}
+	
+	public Universite(Universite u)
+	{
+		this.nom= u.nom;
+		this.ufr= u.ufr;
+		this.labo= u.labo;
+		this.depart= u.depart;
+	}
+	
+	public String getNom()
+	{
+		return this.nom;
 	}
 	
 	public Object clone() throws CloneNotSupportedException
@@ -39,6 +57,56 @@ public class Universite {
 				" et enfin "+ this.depart;
 				
 		return res;
+	}
+	
+	public String listerBatiments()
+	{
+		String res= new String();
 		
+		for(int i=0; i< this.ufr.size(); i++)
+		{
+			ArrayList<Batiment> lb= this.ufr.get(i).getListeBatiments();
+			
+			for(int j=0; j<lb.size(); j++)
+			{
+				res+= lb.get(j).getNom()+"\n";
+			}
+		}
+		
+		return res;
+	}
+	
+	public void toXML(Element universiteRacine)
+	{
+		Element univ = new Element("universite");
+		universiteRacine.addContent(univ);
+
+		Element nom= new Element("nom");
+		nom.setText(this.getNom());
+		univ.addContent(nom);
+	      
+		Element ufrs= new Element("ufrsUniversite");
+		univ.addContent(ufrs);
+		
+		for(UFR u : this.ufr)
+		{
+			u.toXML(ufrs);
+		}
+		
+		Element laboratoires= new Element("laboratoiresUniversite");
+		univ.addContent(laboratoires);
+		
+		for(Laboratoire l : this.labo)
+		{
+			l.toXML(laboratoires);
+		}
+		
+		Element departements= new Element("departementsUniversite");
+		univ.addContent(departements);
+		
+		for(Departement d : this.depart)
+		{
+			d.toXML(departements);
+		}
 	}
 }

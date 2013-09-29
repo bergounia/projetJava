@@ -1,5 +1,8 @@
 package universite.batiments;
 
+import org.jdom2.Attribute;
+import org.jdom2.Element;
+
 public class SalleCours extends Salle{
 	
 	private boolean videoProj=false;
@@ -40,6 +43,13 @@ public class SalleCours extends Salle{
 			res+="  ne contient pas de video-projecteur";	
 			
 		return res;
-		
+	}
+	
+	@Override
+	public void toXML(Element salleXML)
+	{
+		//Ajout de l'attribut type 
+		Attribute type = new Attribute("type","SalleCours");
+		this.sa.setAttribute(type);
 	}
 }

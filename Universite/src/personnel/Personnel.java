@@ -1,9 +1,12 @@
 package personnel;
 
+import org.jdom2.Element;
+
 public abstract class Personnel {
 
 	private String nom;
 	private String prenom;
+	protected Element personne= new Element("personne");;
 	
 	public Personnel()
 	{
@@ -46,5 +49,21 @@ public abstract class Personnel {
 				
 		return res;
 		
+	}
+	
+	public void toXML(Element p)
+	{		
+		//Creation de l'element personne
+		p.addContent(personne);
+	      
+		//Une personne a un nom
+		Element nom= new Element("nom");
+		nom.setText(this.getNom());
+		personne.addContent(nom);
+		
+		//Une personne a aussi un prenom
+		Element prenom= new Element("prenom");
+		prenom.setText(this.getPrenom());
+		personne.addContent(prenom);  
 	}
 }

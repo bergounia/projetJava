@@ -1,12 +1,14 @@
 package universite.batiments;
 
 import java.util.ArrayList;
+import org.jdom2.Attribute;
+import org.jdom2.Element;
 
 import personnel.Personnel;
 
 public class Bureau extends Salle {
 
-	private ArrayList<Personnel> pList=  new ArrayList<Personnel>();
+	private ArrayList<Personnel> pList;
 	
 	public Bureau(){
 		super();
@@ -15,7 +17,7 @@ public class Bureau extends Salle {
 	
 	public Bureau(String num, ArrayList<Personnel> p){
 		super(num);	
-		this.setpList(p);
+		this.pList= p;
 	}
 
 	public ArrayList<Personnel> getpList() {
@@ -45,5 +47,21 @@ public class Bureau extends Salle {
 				
 		return res;
 		
+	}
+	
+	@Override
+	public void toXML(Element salleXML)
+	{
+		//Ajout de l'attribut type 
+		Attribute type = new Attribute("type","Bureau");
+		this.sa.setAttribute(type);
+		
+		Element personnel= new Element("Personnel");
+		this.sa.addContent(personnel);
+		
+		for(Personnel e: this.pList)
+		{
+			e.toXML(personnel);
+		}
 	}
 }
