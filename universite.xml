@@ -117,6 +117,56 @@
           </departement>
         </departementsUFR>
       </ufr>
+	  <ufr>
+		<nom>LesCoCo</nom>
+			<batiments>
+				<batiment>
+					<id>1</id>
+					<nom>toto</nom>
+						<salles>
+							<salle>
+								<num>test</num>
+							</salle>
+						</salles>
+				</batiment>
+				<batiment>
+					<id>2</id>
+					<nom>toto</nom>
+					<salles>
+							<salle>
+								<num>test</num>
+							</salle>
+						</salles>
+				</batiment>
+				<batiment>
+					<id>3</id>
+					<nom>toto</nom>
+						<salles>
+							<salle>
+								<num>test</num>
+							</salle>
+						</salles>
+				</batiment>
+				<batiment>
+					<id>4</id>
+					<nom>toto</nom>
+						<salles>
+							<salle>
+								<num>test</num>
+							</salle>
+						</salles>
+				</batiment>
+				<batiment>
+					<id>5</id>
+					<nom>toto</nom>
+						<salles>
+							<salle>
+								<num>test</num>
+							</salle>
+						</salles>
+				</batiment>
+			</batiments>
+	  </ufr>
     </ufrsUniversite>
     <laboratoiresUniversite>
       <Laboratoire>

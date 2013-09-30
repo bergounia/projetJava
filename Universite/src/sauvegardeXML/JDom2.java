@@ -44,27 +44,32 @@ public class JDom2
 		      ufrCourant=new UFR(courant.getChild("nom").getText());
 		      
 		      List listBatiments = courant.getChild("batiments").getChildren("batiment");
-		      Iterator j = listUFR.iterator();
-		      while(i.hasNext())
+		      Iterator j = listBatiments.iterator();
+		      while(j.hasNext())
 			   {
-		    	  Element courant2 = (Element)i.next();
+		    	  Element courant2 = (Element)j.next();
 		    	  batCourant = new Batiment(courant2.getChild("nom").getText());
 		    	  
+		    	  System.out.println(batCourant);
+		    	  
 		    	  List listSalles = courant2.getChild("salles").getChildren("salle");
-		    	  Iterator k = listUFR.iterator();
-				  while(i.hasNext())
+		    	  Iterator k = listSalles.iterator();
+		    	  System.out.println(listSalles.size());
+				  while(k.hasNext())
 				   {
-					   Element courant3 = (Element)i.next();
-					   batCourant.ajoutSalle(new Salle(courant3.getChild("nom").getText()));
+					   Element courant3 = (Element)k.next();
+					   if (batCourant !=null) batCourant.ajoutSalle(new Salle());
 				   }
 				   
-				   ufrCourant.ajoutBatiment(batCourant);
+				   //ufrCourant.ajoutBatiment(batCourant);
 			   }
 		      
 		      listeUFRs.add(new UFR(courant.getChild("nom").getText()));
-		      //System.out.println(listeUFRs.size());
+		      System.out.println(ufrCourant);
+		      System.out.println(listBatiments.size());
+		     
 		   }
-
+		   System.out.println(listeUFRs.size());
 	   }
    
    
