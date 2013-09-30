@@ -23,7 +23,7 @@ public class Frame extends JFrame{
 		this.batiment=new JLabel("Liste des batiments");
 		this.departement= new JLabel("Liste des departements");
 		
-		this.listeBatiments= new JLabel(JDom1.urca.listerBatiments());
+		//this.listeBatiments= new JLabel(JDom1.urca.listerBatiments());
 		
 		this.setLayout(new GridLayout(2, 2));
 		this.add(this.batiment);

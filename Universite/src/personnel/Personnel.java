@@ -51,8 +51,15 @@ public abstract class Personnel {
 		
 	}
 	
+	public static Element getPersonnel()
+	{
+		Element personne= new Element("personne");
+		return personne;
+	}
+	
 	public void toXML(Element p)
 	{		
+		Element personne= Personnel.getPersonnel();
 		//Creation de l'element personne
 		p.addContent(personne);
 	      

@@ -75,10 +75,10 @@ public class JDom1 {
 		listeChercheurs2.add((Chercheur) p8);
 
 		//Creation de salles du batiment 1
-		Salle s11 = new SalleCours("Maths", true);
-		Salle s12 = new SalleReunion("ConseilDeClasse", false);
-		Salle s13 = new SalleTP("TpJava", 20);
-		Salle s14 = new Bureau("BureauPersonnel", listePersonnel);
+		Salle s11 = new SalleCours("Maths", 30, true);
+		Salle s12 = new SalleReunion("ConseilDeClasse", 15, false);
+		Salle s13 = new SalleTP("TpJava",25, 20);
+		Salle s14 = new Bureau("BureauPersonnel", 5, listePersonnel);
 		
 		ArrayList<Salle> listeSallesBat1 = new ArrayList<Salle>();
 
@@ -88,10 +88,10 @@ public class JDom1 {
 		listeSallesBat1.add(s14);
 
 		// Creation des salles du batiment 2
-		Salle s21 = new SalleCours("BD", true);
-		Salle s22 = new SalleReunion("Conseils", true);
-		Salle s23 = new SalleTP("TpBD", 15);
-		Salle s24 = new SalleCours("Analyse", false);
+		Salle s21 = new SalleCours("BD", 30, true);
+		Salle s22 = new SalleReunion("Conseils", 15, true);
+		Salle s23 = new SalleTP("TpBD", 20, 15);
+		Salle s24 = new SalleCours("Analyse", 30, false);
 
 		ArrayList<Salle> listeSallesBat2 = new ArrayList<Salle>();
 
@@ -184,13 +184,11 @@ public class JDom1 {
 	{
 		
 		creationObjets();
-		System.out.println(urca.listerBatiments());
-	/*
+		//System.out.println(urca.listerBatiments());
 		urca.toXML(racine);
 
 		//Les deux méthodes qui suivent seront définies plus loin dans l'article
 		affiche();
 		enregistre("universite.xml");
-*/
 	}
 }

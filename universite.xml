@@ -9,12 +9,46 @@
           <batiment>
             <id>1</id>
             <nom>Informatique</nom>
-            <salles />
+            <salles>
+              <salle>
+                <num>Maths</num>
+                <nbplaces>30</nbplaces>
+              </salle>
+              <salle>
+                <num>ConseilDeClasse</num>
+                <nbplaces>15</nbplaces>
+              </salle>
+              <salle>
+                <num>TpJava</num>
+                <nbplaces>25</nbplaces>
+              </salle>
+              <salle>
+                <num>BureauPersonnel</num>
+                <nbplaces>5</nbplaces>
+              </salle>
+            </salles>
           </batiment>
           <batiment>
             <id>2</id>
             <nom>Amphi</nom>
-            <salles />
+            <salles>
+              <salle>
+                <num>BD</num>
+                <nbplaces>30</nbplaces>
+              </salle>
+              <salle>
+                <num>Conseils</num>
+                <nbplaces>15</nbplaces>
+              </salle>
+              <salle>
+                <num>TpBD</num>
+                <nbplaces>20</nbplaces>
+              </salle>
+              <salle>
+                <num>Analyse</num>
+                <nbplaces>30</nbplaces>
+              </salle>
+            </salles>
           </batiment>
         </batiments>
         <departementsUFR>
@@ -32,12 +66,46 @@
           <batiment>
             <id>1</id>
             <nom>Informatique</nom>
-            <salles />
+            <salles>
+              <salle>
+                <num>Maths</num>
+                <nbplaces>30</nbplaces>
+              </salle>
+              <salle>
+                <num>ConseilDeClasse</num>
+                <nbplaces>15</nbplaces>
+              </salle>
+              <salle>
+                <num>TpJava</num>
+                <nbplaces>25</nbplaces>
+              </salle>
+              <salle>
+                <num>BureauPersonnel</num>
+                <nbplaces>5</nbplaces>
+              </salle>
+            </salles>
           </batiment>
           <batiment>
             <id>2</id>
             <nom>Amphi</nom>
-            <salles />
+            <salles>
+              <salle>
+                <num>BD</num>
+                <nbplaces>30</nbplaces>
+              </salle>
+              <salle>
+                <num>Conseils</num>
+                <nbplaces>15</nbplaces>
+              </salle>
+              <salle>
+                <num>TpBD</num>
+                <nbplaces>20</nbplaces>
+              </salle>
+              <salle>
+                <num>Analyse</num>
+                <nbplaces>30</nbplaces>
+              </salle>
+            </salles>
           </batiment>
         </batiments>
         <departementsUFR>

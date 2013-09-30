@@ -12,9 +12,9 @@ public class SalleTP extends Salle{
 		super();
 	}
 	
-	public SalleTP(String num, int pI)
+	public SalleTP(String num, int i, int pI)
 	{
-		super(num);
+		super(num, i);
 		this.setPosteInfo(pI);
 	}
 
@@ -41,11 +41,11 @@ public class SalleTP extends Salle{
 		return res;
 	}
 
-	@Override
+	/*@Override
 	public void toXML(Element salleXML)
 	{
 		//Ajout de l'attribut type 
 		Attribute type = new Attribute("type","SalleTP");
 		this.sa.setAttribute(type);
-	}
+	}*/
 }
