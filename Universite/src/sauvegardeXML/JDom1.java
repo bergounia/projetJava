@@ -210,26 +210,10 @@ public class JDom1 {
 	public static void main(String[] args)
 	{
 		
-<<<<<<< HEAD
-		testObjet();
 
-		SwingUtilities.invokeLater(new Runnable() //Processus qui va gérer tout ce qui est lié à l'interface pour éviter les conflits avec le proccessus Main
-    	{
-    		public void run() 
-    		{
-    			Frame f = new Frame("Universite");
-    			f.ajoutBatimentListe(listeBatiments);
-    			//f.ajoutDepartementListe(listeDepartements);
-        		f.setSize(300,200);
-        		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        		f.setVisible(true);
-    		}
-    	});
-	/*
-=======
 		creationObjets();
 		//System.out.println(urca.listerBatiments());
->>>>>>> 4e84e2423a658a8903d5ca3a0d186c36820131f0
+
 		urca.toXML(racine);
 
 		//Les deux méthodes qui suivent seront définies plus loin dans l'article

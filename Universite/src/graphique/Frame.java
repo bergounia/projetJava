@@ -48,6 +48,8 @@ public class Frame extends JFrame{
 		
 		this.pack();
 	}
+	
+
 
 
 	public void ajoutBatiment(Object bat){
@@ -81,5 +83,21 @@ public class Frame extends JFrame{
 		{
 			ajoutDepartement(DPT);
 		}
+	}
+	
+	public static void main(String []args){
+
+		SwingUtilities.invokeLater(new Runnable() //Processus qui va gérer tout ce qui est lié à l'interface pour éviter les conflits avec le proccessus Main
+    	{
+    		public void run() 
+    		{
+    			Frame f = new Frame("Universite");
+    			//f.ajoutBatimentListe(listeBatiments);
+    			//f.ajoutDepartementListe(listeDepartements);
+        		f.setSize(300,200);
+        		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        		f.setVisible(true);
+    		}
+    	});
 	}
 }
