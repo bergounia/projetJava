@@ -15,11 +15,11 @@ public class Prag extends Personnel implements Enseignant{
 		super(nom, prenom);
 	}
 	
-	@Override
+	/*@Override
 	public void toXML(Element p)
 	{
 		//Ajout de l'attribut type 
 		Attribute type = new Attribute("type","Prag");
 	    personne.setAttribute(type);
-	}
+	}*/
 }

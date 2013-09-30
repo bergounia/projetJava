@@ -15,8 +15,8 @@ public class Bureau extends Salle {
 		this.setpList(null);
 	}
 	
-	public Bureau(String num, ArrayList<Personnel> p){
-		super(num);	
+	public Bureau(String num, int i, ArrayList<Personnel> p){
+		super(num, i);	
 		this.pList= p;
 	}
 
@@ -49,19 +49,19 @@ public class Bureau extends Salle {
 		
 	}
 	
-	@Override
-	public void toXML(Element salleXML)
+	/*@Override
+	public void toXML(Element s)
 	{
 		//Ajout de l'attribut type 
 		Attribute type = new Attribute("type","Bureau");
-		this.sa.setAttribute(type);
+		Salle.getSalle().setAttribute(type);
 		
 		Element personnel= new Element("Personnel");
-		this.sa.addContent(personnel);
+		Salle.getSalle().addContent(personnel);
 		
 		for(Personnel e: this.pList)
 		{
 			e.toXML(personnel);
 		}
-	}
+	}*/
 }

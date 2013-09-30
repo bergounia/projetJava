@@ -12,9 +12,9 @@ public class SalleReunion extends Salle{
 		super();
 	}
 	
-	public SalleReunion(String num, boolean b)
+	public SalleReunion(String num, int i, boolean b)
 	{
-		super(num);
+		super(num, i);
 		this.setPaperBoard(b);
 	}
 
@@ -45,11 +45,11 @@ public class SalleReunion extends Salle{
 		return res;
 	}
 	
-	@Override
+	/*@Override
 	public void toXML(Element salleXML)
 	{
 		//Ajout de l'attribut type 
 		Attribute type = new Attribute("type","SalleReunion");
 		this.sa.setAttribute(type);
-	}
+	}*/
 }

@@ -6,7 +6,6 @@ public class Salle {
 
 	private String num;
 	private int nbplace;
-	public Element sa= new Element("salle");
 	
 	public Salle()
 	{
@@ -57,16 +56,23 @@ public class Salle {
 		
 	}
 	
+	public static Element getSalle()
+	{
+		Element salle= new Element("salle");
+		return salle;
+	}
+	
 	public void toXML(Element s)
 	{
-		s.addContent(this.sa);
+		Element salle= Salle.getSalle();
+		s.addContent(salle);
 		
 		Element num= new Element("num");
 		num.setText(this.getNum());
-		this.sa.addContent(num);
+		salle.addContent(num);
 	      
 		Element nbplaces= new Element("nbplaces");
 		nbplaces.setText(String.valueOf(this.getNbplace()));
-		this.sa.addContent(nbplaces);		
+		salle.addContent(nbplaces);
 	}
 }

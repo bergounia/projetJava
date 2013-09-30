@@ -15,11 +15,11 @@ public class Professeur extends Personnel implements Enseignant, Chercheur{
 		super(nom, prenom);
 	}
 	
-	@Override
+	/*@Override
 	public void toXML(Element p)
 	{
 		//Ajout de l'attribut type 
 		Attribute type = new Attribute("type","Professeur");
 	    personne.setAttribute(type);
-	}
+	}*/
 }
