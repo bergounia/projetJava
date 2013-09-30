@@ -21,6 +21,12 @@ public class Departement implements Enseignant{
 		this.nom= n;
 		this.p= perso;
 	}
+	
+	public Departement(String n)
+	{
+		this.nom= n;
+		this.p= null;
+	}
 
 	public Departement(Departement d)
 	{

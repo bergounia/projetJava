@@ -23,6 +23,13 @@ public class Batiment {
 		this.nom= nom;
 		this.salle= s;
 	}
+	
+	public Batiment(String nom)
+	{
+		this.id= incr++;
+		this.nom= nom;
+		this.salle= null;
+	}
 
 	public Batiment(Batiment b)
 	{

@@ -1,9 +1,16 @@
 package sauvegardeXML;
 
+import graphique.Frame;
+
 import java.io.*;
 import java.util.ArrayList;
+
+import javax.swing.JFrame;
+import javax.swing.SwingUtilities;
+
 import org.jdom2.*;
 import org.jdom2.output.*;
+
 import personnel.ChargeRecherche;
 import personnel.Chercheur;
 import personnel.Enseignant;
@@ -32,6 +39,9 @@ public class JDom1 {
 	public static org.jdom2.Document document = new Document(racine);
 	
 	public static Universite urca;
+	public static ArrayList<Batiment> listeBatiments = new ArrayList<Batiment>();
+	public static ArrayList<Personnel> listePersonnels = new ArrayList<Personnel>();
+	public static ArrayList<Departement> listeDepartements = new ArrayList<Departement>();
 
 	public static void creationObjets()
 	{
@@ -104,8 +114,6 @@ public class JDom1 {
 		Batiment b1 = new Batiment("Informatique", listeSallesBat1);
 		Batiment b2 = new Batiment("Amphi", listeSallesBat2);
 
-		ArrayList<Batiment> listeBatiments = new ArrayList<Batiment>();
-
 		listeBatiments.add(b1);
 		listeBatiments.add(b2);
 
@@ -156,6 +164,25 @@ public class JDom1 {
 		urca = new Universite("URCA", listeUFR, listeLaboratoires, listeDepartements3);
 	}
 	
+	public static void testObjet(){
+				
+		listeBatiments.add(new Batiment("Informatique"));
+		listeBatiments.add(new Batiment("Amphi"));
+		
+		listePersonnels.add(new Prag("Bride", "Aymeric"));
+		listePersonnels.add(new MaitreDeConf("Rabat", "Cyril"));
+		listePersonnels.add(new Professeur("Kaminski", "Benjamin"));
+		listePersonnels.add(new ChargeRecherche("Nocent", "Olivier"));
+		listePersonnels.add(new Prag("Sandron", "Lidy"));
+		listePersonnels.add(new Prag("Prevost", "Sabine"));
+		listePersonnels.add(new Professeur("Gillard", "Damien"));
+		listePersonnels.add(new ChargeRecherche("Joncquet", "Antoine"));
+		
+		listeDepartements.add(new Departement());
+		listeDepartements.add(new Departement("DepartementInformatique"));
+		
+	}
+	
 	public static void affiche()
 	{
 		try
@@ -183,8 +210,20 @@ public class JDom1 {
 	public static void main(String[] args)
 	{
 		
-		creationObjets();
-		System.out.println(urca.listerBatiments());
+		testObjet();
+
+		SwingUtilities.invokeLater(new Runnable() //Processus qui va gérer tout ce qui est lié à l'interface pour éviter les conflits avec le proccessus Main
+    	{
+    		public void run() 
+    		{
+    			Frame f = new Frame("Universite");
+    			f.ajoutBatimentListe(listeBatiments);
+    			//f.ajoutDepartementListe(listeDepartements);
+        		f.setSize(300,200);
+        		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        		f.setVisible(true);
+    		}
+    	});
 	/*
 		urca.toXML(racine);
 
