@@ -18,6 +18,12 @@ public class UFR {
 		this.d= depart;
 	}
 	
+	public UFR(String nom) {
+		this.nom = nom;
+		this.b= null;
+		this.d= null;
+	}
+	
 	public UFR(UFR u) {
 		this.nom = u.nom;
 		this.b= u.b;
@@ -54,6 +60,10 @@ public class UFR {
 				
 		return res;
 		
+	}
+	
+	public void ajoutBatiment(Batiment bat){
+		this.b.add(bat);
 	}
 
 	public void toXML(Element u)

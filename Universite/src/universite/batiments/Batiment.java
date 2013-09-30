@@ -30,6 +30,13 @@ public class Batiment {
 		this.nom= nom;
 		this.salle= null;
 	}
+	
+	public Batiment(String nom,int id)
+	{
+		this.id= id;
+		this.nom= nom;
+		this.salle= null;
+	}
 
 	public Batiment(Batiment b)
 	{
@@ -65,6 +72,10 @@ public class Batiment {
 	public int getId()
 	{
 		return this.id;
+	}
+	
+	public void ajoutSalle(Salle sa){
+		this.salle.add(sa);
 	}
 	
 	public ArrayList<Salle> getSalle() {
