@@ -83,7 +83,7 @@ public class Batiment {
 	}
 
 	public void setSalle(ArrayList<Salle> salle) {
-		this.salle = salle;
+		this.salle = new ArrayList<Salle>(salle);
 	}
 	
 	public void toXML(Element bat)

@@ -19,7 +19,7 @@ public class JDom2
 {
    static org.jdom2.Document document;
    static Element racine;
-   static ArrayList<UFR> listeUFRs = new ArrayList<UFR>();
+   //static ArrayList<UFR> listeUFRs = new ArrayList<UFR>();
    static Batiment batCourant;
    static UFR ufrCourant;
    static ArrayList<Batiment> listeBATs = new ArrayList<Batiment>();
@@ -28,7 +28,7 @@ public class JDom2
    
    // il faudra créer 2 autres éléments courant (salle et batiments)
 
-   public static void LectureXML(){
+   public static void LectureXML(ArrayList<UFR> listeUFRs){
 	   
 		 //On crée une List contenant tous les noeuds "etudiant" de l'Element racine
 		   List listUFR = racine.getChild("universite").getChild("ufrsUniversite").getChildren("ufr");
@@ -70,15 +70,16 @@ public class JDom2
 		      
 		      ufrCourant.setB(listeBATs);
 		      listeUFRs.add(ufrCourant);
-		      System.out.println(batCourant);
+		      listeBATs.clear();
+		      //System.out.println(batCourant);
 		     
 		   }
-		   System.out.println(ufrCourant);
-		   System.out.println(listeUFRs.size());
+		   //System.out.println(ufrCourant);
+		   //System.out.println(listeUFRs.size());
 	   }
    
    
-   public static void ParserXML()
+   public static void ParserXML(ArrayList<UFR> liste)
    {
       //On crée une instance de SAXBuilder
       SAXBuilder sxb = new SAXBuilder();
@@ -93,12 +94,25 @@ public class JDom2
       //On initialise un nouvel élément racine avec l'élément racine du document.
       racine = document.getRootElement();
       
-      LectureXML();
+      LectureXML(liste);
    }
    
-  
+   /*public static void affichertout(){
+	  
+	  for(UFR r:listeUFRs){
+		  System.out.println(r);
+		  for(Batiment b:r.getListeBatiments()){
+			  System.out.println(b);
+			  for(Salle s:b.getSalle()){
+				  System.out.println(s);
+			  }
+		  }
+	  }
+	  
+  }
    
    public static void main(String[]args){
 	   ParserXML();
-   }
+	   affichertout();
+   }*/
 }

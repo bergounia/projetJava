@@ -91,4 +91,20 @@ public class UFR {
 			depart.toXML(departements);
 		}
 	}
+
+	public ArrayList<Batiment> getB() {
+		return b;
+	}
+
+	public void setB(ArrayList<Batiment> b) {
+		this.b = new ArrayList<Batiment>(b);
+	}
+
+	public ArrayList<Departement> getD() {
+		return d;
+	}
+
+	public void setD(ArrayList<Departement> d) {
+		this.d = d;
+	}
 }
