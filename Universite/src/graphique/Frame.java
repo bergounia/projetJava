@@ -1,16 +1,19 @@
 package graphique;
 
-import java.awt.GridLayout;
+import java.awt.TextArea;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.util.ArrayList;
-
 import javax.swing.BoxLayout;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
 import javax.swing.SwingUtilities;
-
 import personnel.Personnel;
 import sauvegardeXML.JDom1;
+import sauvegardeXML.JDom2;
 import universite.batiments.Batiment;
 import universite.batiments.Salle;
 import administratif.*;
@@ -18,12 +21,10 @@ import administratif.*;
 
 public class Frame extends JFrame{
 	
-	private JLabel batiment;
-	private JLabel listeBatiments;
-	private JLabel departement;
-	private ObjetListe batiments;
-	private ObjetListe dpts;
-	private ObjetListe personnels;
+	private JLabel universiteLabel;
+	private Universite univ=new Universite();
+	private JDom1 jdom1 = new JDom1();
+	private JDom2 jdom2 = new JDom2();
 	
 	public Frame(String titre){
 		
@@ -31,27 +32,46 @@ public class Frame extends JFrame{
 		//this.batiment=new JLabel("Liste des batiments");
 		//this.departement= new JLabel("Liste des departements");
 		
-		//this.listeBatiments= new JLabel(JDom1.urca.listerBatiments());
+		addWindowListener(new WindowAdapter(){
+			public void windowClosing(WindowEvent e){
+				jdom1.sauvegarde(univ);
+				System.exit(0);
+               } 
+          } ) ; 
 		
-		this.setLayout(new GridLayout(2, 2));
-		//this.add(this.batiment);
-		//this.add(this.departement);
+		jdom2.ParserXML(univ);
+	
+		//this.universiteLabel=new JLabel(affichertout(univ));
+		//this.add(this.universiteLabel);
 		
-		this.batiments=new ObjetListe();
-		this.add(this.batiments);
+		TextArea textArea = new TextArea(affichertout(univ));
+		JScrollPane scrollPane = new JScrollPane(textArea);
 		
-		//this.personnels=new ObjetListe();
-		//this.add(this.personnels);
-		
-		//this.dpts=new ObjetListe();
-		//this.add(this.dpts);
+		this.add(scrollPane);
 		
 		this.pack();
 	}
 	
+	public String affichertout(Universite univ){
+		
+		String res=new String();
+		
+		  for(UFR r:univ.getUfr()){
+			  res+=r+"\n \n Batiments: \n";
+			  for(Batiment b:r.getListeBatiments()){
+				  res+= "\t"+b+"\n";
+				  res+= "\t \t Salles:\n \n";
+				  for(Salle s:b.getSalle()){
+					  res+= "\t \t"+s+"\n";
+				  }
+			  }
+		  }
+		  
+		  return res;
+	  }
+	
 
-
-
+/*
 	public void ajoutBatiment(Object bat){
 		this.batiments.AjoutElement(bat);
 	}
@@ -83,7 +103,8 @@ public class Frame extends JFrame{
 		{
 			ajoutDepartement(DPT);
 		}
-	}
+	}*/
+	
 	
 	public static void main(String []args){
 
@@ -94,7 +115,8 @@ public class Frame extends JFrame{
     			Frame f = new Frame("Universite");
     			//f.ajoutBatimentListe(listeBatiments);
     			//f.ajoutDepartementListe(listeDepartements);
-        		f.setSize(300,200);
+        		f.setSize(300,600);
+    			f.setLocation(500, 200);
         		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         		f.setVisible(true);
     		}

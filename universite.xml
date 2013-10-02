@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Universite>
   <universite>
-    <nom>URCA</nom>
+    <nom />
     <ufrsUniversite>
       <ufr>
         <nom>FacDesSciences</nom>
@@ -12,19 +12,19 @@
             <salles>
               <salle>
                 <num>Maths</num>
-                <nbplaces>30</nbplaces>
+                <nbplaces>0</nbplaces>
               </salle>
               <salle>
                 <num>ConseilDeClasse</num>
-                <nbplaces>15</nbplaces>
+                <nbplaces>0</nbplaces>
               </salle>
               <salle>
                 <num>TpJava</num>
-                <nbplaces>25</nbplaces>
+                <nbplaces>0</nbplaces>
               </salle>
               <salle>
                 <num>BureauPersonnel</num>
-                <nbplaces>5</nbplaces>
+                <nbplaces>0</nbplaces>
               </salle>
             </salles>
           </batiment>
@@ -34,155 +34,133 @@
             <salles>
               <salle>
                 <num>BD</num>
-                <nbplaces>30</nbplaces>
+                <nbplaces>0</nbplaces>
               </salle>
               <salle>
                 <num>Conseils</num>
-                <nbplaces>15</nbplaces>
+                <nbplaces>0</nbplaces>
               </salle>
               <salle>
                 <num>TpBD</num>
-                <nbplaces>20</nbplaces>
+                <nbplaces>0</nbplaces>
               </salle>
               <salle>
                 <num>Analyse</num>
-                <nbplaces>30</nbplaces>
+                <nbplaces>0</nbplaces>
               </salle>
             </salles>
           </batiment>
         </batiments>
-        <departementsUFR>
-          <departement>
-            <nom>DepartementInformatique</nom>
-          </departement>
-          <departement>
-            <nom>DepartementPhysique</nom>
-          </departement>
-        </departementsUFR>
+        <departementsUFR />
       </ufr>
       <ufr>
         <nom>FacDeChalon</nom>
         <batiments>
           <batiment>
-            <id>1</id>
+            <id>3</id>
             <nom>Informatique</nom>
             <salles>
               <salle>
                 <num>Maths</num>
-                <nbplaces>30</nbplaces>
+                <nbplaces>0</nbplaces>
               </salle>
               <salle>
                 <num>ConseilDeClasse</num>
-                <nbplaces>15</nbplaces>
+                <nbplaces>0</nbplaces>
               </salle>
               <salle>
                 <num>TpJava</num>
-                <nbplaces>25</nbplaces>
+                <nbplaces>0</nbplaces>
               </salle>
               <salle>
                 <num>BureauPersonnel</num>
-                <nbplaces>5</nbplaces>
+                <nbplaces>0</nbplaces>
               </salle>
             </salles>
           </batiment>
           <batiment>
-            <id>2</id>
+            <id>4</id>
             <nom>Amphi</nom>
             <salles>
               <salle>
                 <num>BD</num>
-                <nbplaces>30</nbplaces>
+                <nbplaces>0</nbplaces>
               </salle>
               <salle>
                 <num>Conseils</num>
-                <nbplaces>15</nbplaces>
+                <nbplaces>0</nbplaces>
               </salle>
               <salle>
                 <num>TpBD</num>
-                <nbplaces>20</nbplaces>
+                <nbplaces>0</nbplaces>
               </salle>
               <salle>
                 <num>Analyse</num>
-                <nbplaces>30</nbplaces>
+                <nbplaces>0</nbplaces>
               </salle>
             </salles>
           </batiment>
         </batiments>
-        <departementsUFR>
-          <departement>
-            <nom>DepartementTC</nom>
-          </departement>
-          <departement>
-            <nom>DepartementGC</nom>
-          </departement>
-        </departementsUFR>
+        <departementsUFR />
       </ufr>
-	  <ufr>
-		<nom>LesCoCo</nom>
-			<batiments>
-				<batiment>
-					<id>1</id>
-					<nom>toto</nom>
-						<salles>
-							<salle>
-								<num>test</num>
-							</salle>
-						</salles>
-				</batiment>
-				<batiment>
-					<id>2</id>
-					<nom>toto</nom>
-					<salles>
-							<salle>
-								<num>test</num>
-							</salle>
-						</salles>
-				</batiment>
-				<batiment>
-					<id>3</id>
-					<nom>toto</nom>
-						<salles>
-							<salle>
-								<num>test</num>
-							</salle>
-						</salles>
-				</batiment>
-				<batiment>
-					<id>4</id>
-					<nom>toto</nom>
-						<salles>
-							<salle>
-								<num>test</num>
-							</salle>
-						</salles>
-				</batiment>
-				<batiment>
-					<id>5</id>
-					<nom>toto</nom>
-						<salles>
-							<salle>
-								<num>test</num>
-							</salle>
-						</salles>
-				</batiment>
-			</batiments>
-	  </ufr>
+      <ufr>
+        <nom>LesCoCo</nom>
+        <batiments>
+          <batiment>
+            <id>5</id>
+            <nom>toto</nom>
+            <salles>
+              <salle>
+                <num>test</num>
+                <nbplaces>0</nbplaces>
+              </salle>
+            </salles>
+          </batiment>
+          <batiment>
+            <id>6</id>
+            <nom>toto</nom>
+            <salles>
+              <salle>
+                <num>test</num>
+                <nbplaces>0</nbplaces>
+              </salle>
+            </salles>
+          </batiment>
+          <batiment>
+            <id>7</id>
+            <nom>toto</nom>
+            <salles>
+              <salle>
+                <num>test</num>
+                <nbplaces>0</nbplaces>
+              </salle>
+            </salles>
+          </batiment>
+          <batiment>
+            <id>8</id>
+            <nom>toto</nom>
+            <salles>
+              <salle>
+                <num>test</num>
+                <nbplaces>0</nbplaces>
+              </salle>
+            </salles>
+          </batiment>
+          <batiment>
+            <id>9</id>
+            <nom>toto</nom>
+            <salles>
+              <salle>
+                <num>test</num>
+                <nbplaces>0</nbplaces>
+              </salle>
+            </salles>
+          </batiment>
+        </batiments>
+        <departementsUFR />
+      </ufr>
     </ufrsUniversite>
-    <laboratoiresUniversite>
-      <Laboratoire>
-        <nom>Labo1</nom>
-      </Laboratoire>
-      <Laboratoire>
-        <nom>Labo2</nom>
-      </Laboratoire>
-    </laboratoiresUniversite>
-    <departementsUniversite>
-      <departement>
-        <nom>DepartementMathematiques</nom>
-      </departement>
-      <departement>
-        <nom>DepartementEconomie</nom>
-      </departement>
-    </departementsUniversite>
+    <laboratoiresUniversite />
+    <departementsUniversite />
   </universite>
 </Universite>

@@ -10,6 +10,7 @@ import universite.batiments.Batiment;
 import universite.batiments.Salle;
 import administratif.Departement;
 import administratif.UFR;
+import administratif.Universite;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -79,7 +80,7 @@ public class JDom2
 	   }
    
    
-   public static void ParserXML(ArrayList<UFR> liste)
+   public static void ParserXML(Universite univ)
    {
       //On crée une instance de SAXBuilder
       SAXBuilder sxb = new SAXBuilder();
@@ -94,7 +95,7 @@ public class JDom2
       //On initialise un nouvel élément racine avec l'élément racine du document.
       racine = document.getRootElement();
       
-      LectureXML(liste);
+      LectureXML(univ.getUfr());
    }
    
    /*public static void affichertout(){

@@ -50,7 +50,7 @@ public class Batiment {
 	{
 		String res= new String();
 		
-		res+="batiment: "+ this.nom + " d'identifiant "+ this.id;
+		res+=this.nom + " d'identifiant "+ this.id;
 				
 		return res;
 		

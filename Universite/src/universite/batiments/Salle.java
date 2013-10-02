@@ -50,7 +50,7 @@ public class Salle {
 	{
 		String res= new String();
 		
-		res+="La salle: "+ this.num + " contient "+ this.nbplace+ " places";
+		res+=this.num + " contient "+ this.nbplace+ " places";
 				
 		return res;
 		

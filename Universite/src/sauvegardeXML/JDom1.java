@@ -206,6 +206,11 @@ public class JDom1 {
 		}
 		catch (java.io.IOException e){}
 	}
+	
+	public void sauvegarde(Universite univ){
+		univ.toXML(racine);
+		enregistre("universite.xml");
+	}
 
 	public static void main(String[] args)
 	{

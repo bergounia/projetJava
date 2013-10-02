@@ -86,9 +86,11 @@ public class UFR {
 		Element departements= new Element("departementsUFR");
 		ufr.addContent(departements);
 		
-		for(Departement depart : this.d)
-		{
-			depart.toXML(departements);
+		if (this.d!=null){
+			for(Departement depart : this.d)
+			{
+				depart.toXML(departements);
+			}
 		}
 	}
 

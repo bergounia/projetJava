@@ -9,9 +9,9 @@ import universite.batiments.Batiment;
 public class Universite {
 	
 	private String nom;
-	private ArrayList<UFR> ufr;
-	private ArrayList<Laboratoire> labo;
-	private ArrayList<Departement> depart;
+	private ArrayList<UFR> ufr = new ArrayList<UFR>();
+	private ArrayList<Laboratoire> labo = new ArrayList<Laboratoire>();
+	private ArrayList<Departement> depart = new ArrayList<Departement>();
 	
 	public Universite()
 	{
@@ -21,6 +21,14 @@ public class Universite {
 		this.depart= new ArrayList<Departement>();
 	}
 	
+	public ArrayList<UFR> getUfr() {
+		return ufr;
+	}
+
+	public void setUfr(ArrayList<UFR> ufr) {
+		this.ufr = ufr;
+	}
+
 	public Universite(String nom, ArrayList<UFR> u, ArrayList<Laboratoire> l, ArrayList<Departement> d)
 	{
 		this.nom= nom;
