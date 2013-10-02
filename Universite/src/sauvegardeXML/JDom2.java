@@ -22,6 +22,8 @@ public class JDom2
    static ArrayList<UFR> listeUFRs = new ArrayList<UFR>();
    static Batiment batCourant;
    static UFR ufrCourant;
+   static ArrayList<Batiment> listeBATs = new ArrayList<Batiment>();
+   static ArrayList<Salle> listeSALLEs = new ArrayList<Salle>();
    
    
    // il faudra créer 2 autres éléments courant (salle et batiments)
@@ -50,25 +52,28 @@ public class JDom2
 		    	  Element courant2 = (Element)j.next();
 		    	  batCourant = new Batiment(courant2.getChild("nom").getText());
 		    	  
-		    	  System.out.println(batCourant);
 		    	  
 		    	  List listSalles = courant2.getChild("salles").getChildren("salle");
 		    	  Iterator k = listSalles.iterator();
-		    	  System.out.println(listSalles.size());
 				  while(k.hasNext())
 				   {
 					   Element courant3 = (Element)k.next();
-					   if (batCourant !=null) batCourant.ajoutSalle(new Salle());
+					   listeSALLEs.add(new Salle(courant3.getChild("num").getText()));
+					   
+					   //if (batCourant !=null) batCourant.ajoutSalle(new Salle());
 				   }
 				   
-				   //ufrCourant.ajoutBatiment(batCourant);
+				   batCourant.setSalle(listeSALLEs);
+				   listeBATs.add(batCourant);
+				   listeSALLEs.clear();
 			   }
 		      
-		      listeUFRs.add(new UFR(courant.getChild("nom").getText()));
-		      System.out.println(ufrCourant);
-		      System.out.println(listBatiments.size());
+		      ufrCourant.setB(listeBATs);
+		      listeUFRs.add(ufrCourant);
+		      System.out.println(batCourant);
 		     
 		   }
+		   System.out.println(ufrCourant);
 		   System.out.println(listeUFRs.size());
 	   }
    
